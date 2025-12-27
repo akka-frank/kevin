@@ -516,6 +516,9 @@ def main():
                                (groups_movieId['score_avg'] >= 3.0)]["movieId"].tolist()
     
     # 计算电影相似度
+    """
+    考虑直接用用户id和电影id作为索引，占用较大内存，这里转化为编码并一一对应
+    """
     train_data['userId_cat'] = train_data['userId'].astype("category")
     train_data['movieId_cat'] = train_data['movieId'].astype("category")
     
@@ -677,7 +680,6 @@ def main():
     print("4. XGBoost在NDCG@10上表现: {:.4f}".format(xgb_ndcg))
     print("5. LightGBM在Recall@10上表现: {:.4f}".format(lgb_recall))
     print("6. XGBoost在Recall@10上表现: {:.4f}".format(xgb_recall))
-    print("\n结论: 两种模型各有优劣，可根据具体需求选择使用")
     
     return recommender, recall_system, ranking_model
 
