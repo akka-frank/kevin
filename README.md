@@ -58,28 +58,3 @@
     XGBoost在排序质量上略优：NDCG@10和Recall@10指标均稍高于LightGBM
     
     LightGBM训练速度更快：得益于直方图优化算法，训练时间较快
-
-
-## 使用示例
-生成推荐结果
-系统默认会为测试集中的所有用户生成推荐结果，并输出评估指标：
-
-    user_id = 1  # 为用户ID为1的用户生成推荐
-    recommendations = recommender.get_recommendations(user_id)
-    print(f"为用户{user_id}推荐的电影：")
-    for i, movie_id in enumerate(recommendations, 1):
-        print(f"{i}. 电影ID: {movie_id}")
-    自定义配置
-    在 config.py 中可以调整系统参数：
-    
-    召回数量配置
-    RECALL_NUM = 50          # 召回候选集大小
-    RECENT_LAST_N = 10       # 近期交互电影数量
-    HOT_TOP_N = 200          # 热门电影数量
-    
-    模型参数配置
-    LIGHTGBM_PARAMS = {
-        'learning_rate': 0.05,
-        'num_leaves': 31,
-        'min_data_in_leaf': 20
-    }
