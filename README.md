@@ -22,18 +22,6 @@
     性能对比：量化输出两种模型的排序质量、召回能力与训练效率，提供选型依据
 
 
-运行环境及依赖：
-
-    Python 3.11.7
-    pandas 2.3.3
-    numpy 1.26.4
-    scipy 1.11.4
-    matplotlib 3.8.0
-    seaborn 0.13.2
-    scikit-learn 1.2.2
-    lightgbm 4.6.0
-    xgboost 3.0.1
-
 复现步骤：
 
     环境准备：安装 Python 3.11.7，执行 pip install pandas==2.3.3 numpy==1.26.4 scipy==1.11.4 scikit-learn==1.2.2 lightgbm==4.6.0 xgboost==3.0.1 matplotlib==3.8.0 seaborn==0.13.2。
